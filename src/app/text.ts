@@ -1,3 +1,5 @@
+// export const texts = ["1", "2", "3", "4"];
+
 export const texts = [
   "Think of the television",
   "Be frightened of clichés",
@@ -35,10 +37,10 @@ export const texts = [
   "Ignore other sources",
   "The words do not need changing",
   "Use an acceptable colour",
-  "Ignore your bodyy",
+  "Ignore your body",
   "Humanize something full of errors",
   "Do not use filters",
-  "Unbalance the consistency princpile with the inconsistency principle",
+  "Unbalance the consistency principle with the inconsistency principle",
   "Empty every beat with nothing",
   "Embrace an axiomn",
   "Listen to the loud voice",

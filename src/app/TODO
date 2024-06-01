@@ -1,0 +1,9 @@
+Prettier buttons, appropriately styled.
+Collapse the dumb styling techniques we're doing.
+Looping of cards if there are too many.
+Hoverstate seems to break on trash buttons
+Randomise page grain
+Consider a different mobile view
+Z-index
+Better buttons
+Refactoring some information into components

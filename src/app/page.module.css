@@ -6,22 +6,128 @@
   padding: 8rem;
 }
 
-.card {
-  padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms, transform 1s ease;
-  background-size: cover;
-  background-image: url("./paper-white.png");
+@media (max-width: 768px) {
+  .main {
+    padding: 4rem;
+  }
 }
 
-.card span {
-  display: inline-block;
-  transition: transform 200ms;
+.cardContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 1280px) {
+  .cardContainer {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .cardContainer {
+    grid-template-columns: auto;
+  }
+}
+
+.card {
+  font-size: 0.6cm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: text;
+  width: 4.5in;
+  height: 2.8in;
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms, transform 1s ease,
+    position 1s ease;
+  background-size: cover;
+  background-image: url("white-paper-texture_1194-2324.png");
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.closeButton {
+  user-select: none;
+  font-family: sans-serif;
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 200ms;
+  z-index: 9999;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+  color: white;
+  background-color: #f44336;
+}
+
+.closeButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.addButton,
+.removeButton {
+  user-select: none;
+  font-family: sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 200ms;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.addButton:hover,
+.addButton:focus {
+  color: white;
+  background-color: rgb(0, 89, 255);
+}
+
+.addButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.removeButton:hover,
+.removeButton:focus {
+  color: white;
+  background-color: rgb(255, 0, 0);
+}
+
+.removeButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
-  font-weight: 600;
   margin-bottom: 0.7rem;
 }
 
@@ -36,18 +142,24 @@
 
 @media (prefers-color-scheme: dark) {
   .card {
-    background-image: url("./paper-black.png");
+    background-image: url("black-paper-texture_1194-2324.png");
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .closeButton,
+  .removeButton,
+  .addButton {
+    color: white;
   }
 }
 
-/* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
     cursor: pointer;
-    transform: translateY(-1px);
     transition: transform 400ms ease;
+    transform: rotate(0deg);
   }
 }
 
@@ -61,7 +173,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
@@ -77,9 +188,14 @@
   .card h2 {
     margin-bottom: 0.5rem;
   }
+
+  .card:hover {
+    box-shadow: none;
+    cursor: default;
+    transition: none;
+  }
 }
 
-/* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
@@ -93,4 +209,72 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.button {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button:hover,
+.button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .closeButton {
+    display: none;
+  }
+}
+@media (min-width: 701px) {
+  .removeButton {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  position: fixed;
+  gap: 1rem;
+  bottom: 7px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
