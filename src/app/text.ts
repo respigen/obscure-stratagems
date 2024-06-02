@@ -1,5 +1,3 @@
-// export const texts = ["1", "2", "3", "4"];
-
 export const texts = [
   "Think of the television",
   "Be frightened of clichés",
@@ -107,7 +105,7 @@ export const texts = [
   "Look at a very large object, look away from it's centre",
   "Build a wall but not making a brick",
   "Revaluation (a cold feeling)",
-  "Disiciplined self-service",
+  "Disciplined self-service",
   "The least important thing is the thing most easily remembered",
   "Never first steps",
   "Smart glee",
