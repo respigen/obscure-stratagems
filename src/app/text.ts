@@ -86,7 +86,6 @@ export const texts = [
   "Remember those loud evenings",
   "Break a take",
   "The music is now the tape",
-  "Long circuit (example: a woman disposing of peas with the idea that they will decrease her virility shovels them straight into her mouth)",
   "Imagine the music as a still chain or centipede",
   "Use a new idea",
   "Aleatory: credibility of, nobility of, humility of",
