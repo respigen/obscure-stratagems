@@ -7,5 +7,6 @@
 - Z-indexes are a no-no
 - Should be able to see a card if you click it
 - Accessibility audit
+- Double check the prefers reduced motion
 - Information deck/explainer
-- README
+- README needs more details on actions
