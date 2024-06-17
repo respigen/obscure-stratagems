@@ -10,3 +10,4 @@
 - Double check the prefers reduced motion
 - Information deck/explainer
 - README needs more details on actions
+- Buttons need to be correctly tabbable, and visible when in focus
